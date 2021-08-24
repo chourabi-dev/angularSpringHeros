@@ -1,0 +1,23 @@
+<h1>hello world</h1>
+
+<h3> {{email}} </h3>
+
+<p> {{ 1+1 }} </p>
+
+
+
+<p> {{ fruits }} </p>
+
+<ul>
+    <li *ngFor=" let f of fruits " > {{f}} </li>
+</ul>
+
+
+<ul>
+    <li *ngFor="let e of employees">
+        <p>
+            <strong> {{e.fullname}} </strong><br>
+            <small> {{e.email}} / {{e.phone}} </small>
+        </p>
+    </li>
+</ul>
