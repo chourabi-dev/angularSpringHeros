@@ -1,4 +1,4 @@
-<h1>hello world</h1>
+<!--<h1>hello world</h1>
 
 <h3> {{email}} </h3>
 
@@ -20,4 +20,46 @@
             <small> {{e.email}} / {{e.phone}} </small>
         </p>
     </li>
-</ul>
+</ul>-->
+
+<!-- by pass securty  -->
+<!--<img src="{{imgURL}}" alt="">-->
+
+<!-- modification attribute -->
+<!--<img [src]="imgURL"  [width]="width"/>
+
+<p id="para" [innerHTML]="parf" ></p>
+
+
+<p [style.color]="  test  " >{{parf}}</p>
+
+
+<button [disabled]="canClick" >can click</button>-->
+
+<!--
+<img [src]="getImgURL()"  [width]="width"/>
+
+<br>
+
+
+<button (click)="previous()" >previous</button>
+
+<button   (click)="next()" >next</button> -->
+
+<!--
+<div>
+    <strong> {{hours}} </strong> : <strong>{{minuts}}</strong> : <strong> {{seconds}} </strong>
+</div>-->
+
+
+<table class="table">
+    <tbody>
+        <tr *ngFor="let d of data">
+            <td> {{ d.id }}</td>
+            <td> {{ d.montant | currency:'TND' }} </td>
+            <td> {{ d.date | date }}</td>
+            <td> {{ d.description | uppercase  }} </td>
+            <td>  {{ d.phone | phone }} </td>
+        </tr>
+    </tbody>
+</table>
