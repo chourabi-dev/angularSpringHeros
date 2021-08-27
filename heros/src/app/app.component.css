@@ -2,3 +2,15 @@
     width: 80%;
     margin: auto;
 }
+
+.error{
+    color: red;
+}
+
+.error-border{
+    border-color: red;
+}
+
+.success-border{
+    border-color: greenyellow;
+}

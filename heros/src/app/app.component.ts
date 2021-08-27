@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Employee } from './employee';
 
 @Component({
@@ -85,10 +86,8 @@ export class AppComponent implements OnInit{
 
   /*hours = 0;
   minuts = 0;
-  seconds = 0;*/
-
-
-  data = [
+  seconds = 0;
+    data = [
     { montant: 58000000 , date: new  Date() , id:"15224-sks" , description : "custom sale", phone:"11552233" },
     { montant: 15.19 , date: new  Date() , id:"15224-sks" , description : "custom sale",phone:"11552233" },
     { montant: 180.16 , date: new  Date() , id:"15224-sks" , description : "custom sale",phone:"11552233" },
@@ -96,6 +95,30 @@ export class AppComponent implements OnInit{
     { montant: 1000 , date: new  Date() , id:"15224-sks" , description : "custom sale",phone:"11552233" },
     
   ];
+
+  
+  */
+
+
+  /***************************************************************** */
+
+
+  testForm = new FormGroup({
+    username: new FormControl('',[ Validators.required, Validators.maxLength(5) ]),
+    email: new FormControl('',[ Validators.email, Validators.required ]),
+    department: new FormControl('',Validators.required),
+    address: new FormGroup(
+      {
+        ville: new FormControl(''),
+        code: new FormControl(''),
+        
+      }
+    )
+
+  });
+
+  userdata = [];
+
 
   constructor(){}
 
@@ -124,8 +147,26 @@ export class AppComponent implements OnInit{
         this.seconds = date.getSeconds();
       }, 1000
     )*/
+
+
+    console.log(this.testForm);
+    
   }
- 
+
+
+  valider(){
+    console.log("valider");
+    const user = this.testForm.value;
+
+    this.userdata.push(user);
+
+    this.testForm.reset();
+    
+
+     
+    
+    
+  }
  
  
 

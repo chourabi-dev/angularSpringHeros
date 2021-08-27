@@ -51,7 +51,7 @@
     <strong> {{hours}} </strong> : <strong>{{minuts}}</strong> : <strong> {{seconds}} </strong>
 </div>-->
 
-
+<!--
 <table class="table">
     <tbody>
         <tr *ngFor="let d of data">
@@ -62,4 +62,75 @@
             <td>  {{ d.phone | phone }} </td>
         </tr>
     </tbody>
-</table>
+</table>-->
+
+
+<form [formGroup]="testForm" (ngSubmit)=" valider() ">
+    <label for=""> username 
+        <span class="error" *ngIf=" testForm.value.username == ''  ">*</span>
+    </label> 
+    <br>
+    <input [ngClass]="  testForm.controls.username.valid == false ? 'error-border' : 'success-border' "
+        formControlName="username" type="text" placeholder="username please"> <br> <br>
+
+
+
+    <label for=""> email </label> <br>
+    <input formControlName="email" type="email" placeholder="email please"> <br><br>
+
+
+    <label for="">Department</label> <br>
+
+    <select formControlName="department" >
+        <option value="">Please choose a value</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        
+        
+    </select>
+
+    <br>
+
+
+    <div formGroupName="address" >
+        <label for=""> Ville </label> 
+        <br>
+        <input formControlName="ville" type="text" placeholder="ville"  > <br> <br>
+    
+        <label for=""> Code  </label> 
+        <br>
+        <input formControlName="code" type="text" placeholder="code"  > <br> <br>
+    </div>
+
+
+
+    <button type="submit" [disabled]=" ! testForm.valid ">VALIDER</button>
+</form>
+
+
+<!--
+
+  testForm = new FormGroup({
+    username: new FormControl('',[ Validators.required, Validators.maxLength(5) ]),
+    email: new FormControl('',[ Validators.email, Validators.required ]),
+    department: new FormControl('',Validators.required),
+    address: new FormGroup(
+      {
+        ville: new FormControl(''),
+        code: new FormControl(''),
+        
+      }
+    )
+
+  });
+
+  userdata = [];-->
+<ul>
+    <li *ngFor="let u of userdata " >
+        <h3>{{u.username}}</h3>
+        <p>
+            {{u.email}} / {{u.department}} 
+        </p>
+    </li>
+</ul>
