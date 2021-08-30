@@ -65,7 +65,7 @@
 </table>-->
 
 
-<form [formGroup]="testForm" (ngSubmit)=" valider() ">
+<!--<form [formGroup]="testForm" (ngSubmit)=" valider() ">
     <label for=""> username 
         <span class="error" *ngIf=" testForm.value.username == ''  ">*</span>
     </label> 
@@ -106,7 +106,7 @@
 
 
     <button type="submit" [disabled]=" ! testForm.valid ">VALIDER</button>
-</form>
+</form>-->
 
 
 <!--
@@ -126,11 +126,75 @@
   });
 
   userdata = [];-->
-<ul>
+<!--<ul>
     <li *ngFor="let u of userdata " >
         <h3>{{u.username}}</h3>
         <p>
             {{u.email}} / {{u.department}} 
         </p>
     </li>
-</ul>
+</ul>-->
+
+
+
+<!--<div class="square" (mouseenter)="mouseEnterEvent()" (mouseleave)="mouseLeaveEvent()" >
+
+</div>-->
+
+<!--
+<div id="test" class="square" (mousemove)="mouseOverEvent($event)"  >
+    <div [style.left]="x" [style.top]="y"  class="ball"></div>
+</div>-->
+
+<!--
+<input type="text" (keyup)="search($event)">
+
+<p>
+    message : {{inputValue}}
+</p>-->
+
+<!--
+
+<form [formGroup]="stepOneForm" (ngSubmit)="validate()" *ngIf=" step == 0 ">
+    <input type="text" formControlName="username">
+
+    <button type="submit" [disabled]="! stepOneForm.valid" >NEXT</button>
+</form>
+
+
+<form [formGroup]="stepTwoForm" *ngIf=" step == 1 " (ngSubmit)="validate()" >
+    <input type="text" formControlName="email">
+
+    <button type="button" (click)="goBack()" >PRRVIOUS</button>
+    <button type="submit" >NEXT</button>
+</form>
+
+
+<form [formGroup]="lastForm" *ngIf=" step == 2 "  (ngSubmit)="validate()">
+    <input type="text" formControlName="password">
+
+    <button type="button" (click)="goBack()" >PRRVIOUS</button>
+    <button type="submit" >VALIDATE</button>
+</form>-->
+
+
+
+
+
+
+<!--componenets-->
+
+
+<app-navbar></app-navbar>
+ 
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <app-sidemenu></app-sidemenu>
+        </div>
+        <div class="col-sm-9">
+            <app-products></app-products>
+        </div>
+    </div>
+</div>

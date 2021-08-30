@@ -102,7 +102,7 @@ export class AppComponent implements OnInit{
 
   /***************************************************************** */
 
-
+/*
   testForm = new FormGroup({
     username: new FormControl('',[ Validators.required, Validators.maxLength(5) ]),
     email: new FormControl('',[ Validators.email, Validators.required ]),
@@ -117,7 +117,33 @@ export class AppComponent implements OnInit{
 
   });
 
-  userdata = [];
+  userdata = [];*/
+/*
+  x = '0px';
+  y = '0px';
+
+  inputValue = '';*/
+
+
+  step = 0;
+
+  stepOneForm = new FormGroup({
+    username: new FormControl('',Validators.required)
+  })
+
+
+
+  stepTwoForm = new FormGroup({
+    email: new FormControl('',Validators.required)
+  })
+
+
+  lastForm = new FormGroup({
+    password: new FormControl('',Validators.required)
+  })
+
+
+
 
 
   constructor(){}
@@ -149,29 +175,78 @@ export class AppComponent implements OnInit{
     )*/
 
 
-    console.log(this.testForm);
+    //console.log(this.testForm);
+
+
+
+    /*document.getElementById("test").addEventListener('mousemove',(e)=>{
+      console.log(e);
+      
+    })*/
     
   }
 
-
+/*
   valider(){
     console.log("valider");
     const user = this.testForm.value;
-
     this.userdata.push(user);
-
-    this.testForm.reset();
-    
-
-     
-    
+    this.testForm.reset(); 
+  }*/
+ 
+/*
+  mouseEnterEvent(){
+    console.log("mouse in the zone !!");
     
   }
  
- 
+
+  mouseLeaveEvent(){
+    console.log("mouse out of the zone !!");
+  }
+
+
+  mouseOverEvent(event:MouseEvent){
+    const x = event.screenX;
+    const y = event.screenY;
+    console.log(x,y);
+    this.x = x+'px';
+    this.y = y+'px';
+  }*/
 
 
 
+/*
+  search(e:any){
+    const value  = e.target.value;
+
+    this.inputValue = value;
+    
+  }*/
+
+  goBack(){
+    if (this.step != 0) {
+      this.step --;
+    }
+  }
+
+  validate(){
+    // ...
+
+    if (this.step != 2) {
+      this.step ++;
+    }else{
+      // ...
+
+      const data = {
+        formOne: this.stepOneForm.value,
+        formTwo: this.stepTwoForm.value,
+        formThree: this.lastForm.value
+      }
+      console.log(data);
+      
+    }
+  }
 
 
 

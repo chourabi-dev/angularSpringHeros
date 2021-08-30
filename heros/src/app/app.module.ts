@@ -5,11 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhonePipe } from './phone.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidemenuComponent } from './sidemenu/sidemenu.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhonePipe
+    PhonePipe,
+    NavbarComponent,
+    SidemenuComponent,
+    ProductsComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
