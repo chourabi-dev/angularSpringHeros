@@ -7,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  data = [1,2,3]
+  data = [
+    { title:"Test product", price:15200  },
+    { title:"Test product 2", price:15200  },
+    { title:"Test product 3", price:15200  },
+    { title:"Test product 4" , price:15200  },
+    
+  ]
+
+
+  deleteItem(index){
+
+    this.data.splice(index);
+    
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
