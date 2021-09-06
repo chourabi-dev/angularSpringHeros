@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+ 
+<div class="container">
+    
+<div class="mt-5 mt-5">
+    <form [formGroup]="addForm" (ngSubmit)="add()" >
+        <div class="mb-3">
+            <label for="">Id</label>
+            <input type="number" class="form-control" formControlName="id" name="" id="">
+
+        </div>
+        <div class="mb-3">
+            <label for="">Name</label>
+            <input type="text" class="form-control" formControlName="name" name="" id="">
+
+        </div>
+        <div class="mb-3">
+            <label for="">Email</label>
+            <input type="email" class="form-control" formControlName="email" name="" id="">
+
+        </div>
+
+        <div class="mb-3">
+           <button class="btn btn-primary" type="submit" [disabled]="! addForm.valid" >Ajouter</button>
+        </div>
+        
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>email</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of data">
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.email}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="delete(e.id)" >delete</button>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+ 
+</div>

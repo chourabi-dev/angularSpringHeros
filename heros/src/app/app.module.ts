@@ -14,6 +14,10 @@ import { AboutComponent } from './about/about.component';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { OurClientsComponent } from './our-clients/our-clients.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { DataComponent } from './data/data.component';
+import { DataPreviewComponent } from './data-preview/data-preview.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AboutComponent,
     OurServicesComponent,
     OurClientsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProfileComponent,
+    ContactsComponent,
+    DataComponent,
+    DataPreviewComponent
   ],
   imports: [
     BrowserModule,
