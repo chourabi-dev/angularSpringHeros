@@ -18,6 +18,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DataComponent } from './data/data.component';
 import { DataPreviewComponent } from './data-preview/data-preview.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DataPreviewComponent } from './data-preview/data-preview.component';
     ProfileComponent,
     ContactsComponent,
     DataComponent,
-    DataPreviewComponent
+    DataPreviewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
