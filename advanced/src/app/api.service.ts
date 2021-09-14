@@ -26,4 +26,8 @@ export class ApiService {
     
   }
 
+  getMovieById(id){
+    return this.http.get(environment.apiServer+'/api/v2/movie_details.json?movie_id='+id)
+  }
+
 }

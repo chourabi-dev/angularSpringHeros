@@ -1,1 +1,31 @@
-<p>movie-page works!</p>
+<div class="container mt-5">
+
+
+
+    <div class="loader text-center" *ngIf="isLoading">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+    </div>
+
+    <div class="row" *ngIf="! isLoading">
+        <div class="col-sm-4">
+            <img [src]="movie.large_cover_image" class="w-100" alt="">
+        </div>
+
+        <div class="col-sm-8">
+            <h1>{{ movie.title }}</h1>
+           <p>{{ movie.description_full }}</p>
+
+
+
+           <div>
+               <ul>
+                   <li *ngFor="let t of movie.torrents">
+                       <a href="{{t.url}}" download class="btn btn-primary mb-2" >  {{t.quality}} </a>
+                   </li>
+               </ul>
+           </div>
+        </div>
+    </div>
+</div>

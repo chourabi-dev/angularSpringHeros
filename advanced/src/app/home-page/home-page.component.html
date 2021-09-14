@@ -12,7 +12,7 @@
         <div class="row mt-5">
             <div class="col-sm-6 col-md-3 mb-3" *ngFor="let m of movies">
                 <div class="card" style="width: 100%;">
-                    <img [src]="m.medium_cover_image" class="card-img-top w-100" alt="...">
+                    <img [src]="m.medium_cover_image" class="card-img-top w-100" alt="..." [routerLink]="'/movie/'+m.id ">
                      
                   </div> 
             </div> 
