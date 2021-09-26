@@ -1,0 +1,47 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Ajouter une commande</h1>
+    <a routerLink="/clients" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-arrow-left fa-sm text-white-50"></i> Retour</a>
+</div>
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Ajouter une commande </h6>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="add"  (ngSubmit)="addData()">
+            <div class="mb-3">
+                <label for="">Produit</label>
+                <select   class="form-control" formControlName="produit">
+                    <option value="">Please choose a value</option>
+                    <option [value]="d.id" *ngFor="let d of produits">{{d.name}}</option>
+                    
+
+                    
+                </select>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="">Quantity</label>
+                <input type="number" class="form-control" formControlName="quantity">
+            </div>
+
+            
+
+            <div class="mb-3">
+                <button class="btn btn-success" type="submit">Ajouter</button>
+            </div>
+
+
+            <div class="alert alert-success" *ngIf="successMsg != '' ">
+                {{successMsg}}
+            </div>
+
+
+
+        </form>
+    </div>
+</div>

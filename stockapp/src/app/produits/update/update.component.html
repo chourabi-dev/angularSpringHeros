@@ -1,0 +1,51 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Ajouter un produit</h1>
+    <a routerLink="/produits" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-arrow-left fa-sm text-white-50"></i> Retour</a>
+</div>
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Ajouter</h6>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="add"  (ngSubmit)="updateData()">
+ 
+            <div class="mb-3">
+                <label for="">Nom</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label for="">Price</label>
+                <input type="number" class="form-control" formControlName="price">
+            </div>
+            <div class="mb-3">
+                <label for="">Quantity</label>
+                <input type="number" class="form-control" formControlName="quantity">
+            </div>
+
+            <div class="mb-3">
+                <label for="">Depot</label>
+                <select   class="form-control" formControlName="depot">
+                    <option value="">Please choose a value</option>
+                    <option [value]="d.id" *ngFor="let d of depots">{{d.name}}</option>
+                    
+
+                    
+                </select>
+            </div>
+
+            
+
+            <div class="mb-3">
+                
+                <button class="btn btn-success" type="submit" [disabled]="! add.valid">Modifier</button>
+            </div>
+
+
+
+        </form>
+    </div>
+</div>
